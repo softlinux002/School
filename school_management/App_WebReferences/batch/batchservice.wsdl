@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batchname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="btitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cupboard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cupself" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="publisher" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookcost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="copy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcopy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="btitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cupboard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cupself" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="publisher" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookcost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="copy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcopy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="asn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bookshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="bookshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Getbook">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetbookResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="bookinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:bookinsert" />
+  </wsdl:message>
+  <wsdl:message name="bookinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:bookinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="bookupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:bookupdate" />
+  </wsdl:message>
+  <wsdl:message name="bookupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:bookupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="bookdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:bookdelete" />
+  </wsdl:message>
+  <wsdl:message name="bookdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:bookdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="bookshowSoapIn">
+    <wsdl:part name="parameters" element="tns:bookshow" />
+  </wsdl:message>
+  <wsdl:message name="bookshowSoapOut">
+    <wsdl:part name="parameters" element="tns:bookshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetbookSoapIn">
+    <wsdl:part name="parameters" element="tns:Getbook" />
+  </wsdl:message>
+  <wsdl:message name="GetbookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetbookResponse" />
+  </wsdl:message>
+  <wsdl:portType name="batchserviceSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bookinsert">
+      <wsdl:input message="tns:bookinsertSoapIn" />
+      <wsdl:output message="tns:bookinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bookupdate">
+      <wsdl:input message="tns:bookupdateSoapIn" />
+      <wsdl:output message="tns:bookupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bookdelete">
+      <wsdl:input message="tns:bookdeleteSoapIn" />
+      <wsdl:output message="tns:bookdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bookshow">
+      <wsdl:input message="tns:bookshowSoapIn" />
+      <wsdl:output message="tns:bookshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Getbook">
+      <wsdl:input message="tns:GetbookSoapIn" />
+      <wsdl:output message="tns:GetbookSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="batchserviceSoap" type="tns:batchserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bookinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bookupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bookdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bookshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getbook">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/Getbook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="batchserviceSoap12" type="tns:batchserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bookinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bookupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bookdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bookshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bookshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getbook">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/Getbook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="batchservice">
+    <wsdl:port name="batchserviceSoap" binding="tns:batchserviceSoap">
+      <soap:address location="http://localhost:63767/school_management/Admin/batchservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="batchserviceSoap12" binding="tns:batchserviceSoap12">
+      <soap12:address location="http://localhost:63767/school_management/Admin/batchservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

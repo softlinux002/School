@@ -1,0 +1,61 @@
+﻿ body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=40);
+            opacity: 0.4;
+        }
+        .modalPopup
+        {
+            background-color: #FFFFFF;
+            width: 45%;
+            border-left:3px solid #33414ea;
+            border-right:3px solid #33414ea;
+            border-bottom:3px solid #33414ea;
+            
+        }
+        .modalPopup .header
+        {
+     background-image: url("../images/core/mws-panel-header-bg.png");
+    background-repeat: repeat-x;
+    border-bottom: 2px solid #35353a;
+    border-radius: 1px;
+    font-family:Cursive;
+    font-size: 14px;
+    height: 25px;
+    padding: 12px 12px 10px;
+    position: relative;
+    color: white;
+    text-shadow: 0 0 6px rgba(197, 213, 42, 0.5);
+    background-color: #33414e;
+        }
+        .modalPopup .body
+        {
+            min-height: 50px;
+            line-height: 30px;
+            text-align: center;
+            padding:5px
+        }
+        .modalPopup .footer
+        {
+            padding: 3px;
+        }
+        .modalPopup .button
+        {
+            height: 23px;
+            color: White;
+            line-height: 23px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #9F9F9F;
+            border: 1px solid #5C5C5C;
+        }
+        .modalPopup td
+        {
+            text-align:left;
+        }

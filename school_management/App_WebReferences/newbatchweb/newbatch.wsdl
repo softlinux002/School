@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="newbatchinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batchname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newbatchinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newbatchinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newbatchupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newbatchupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newbatchupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newbatchdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newbatchdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newbatchdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newbatchshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="newbatchshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newbatchshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="newbatchinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:newbatchinsert" />
+  </wsdl:message>
+  <wsdl:message name="newbatchinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:newbatchinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="newbatchupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:newbatchupdate" />
+  </wsdl:message>
+  <wsdl:message name="newbatchupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:newbatchupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="newbatchdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:newbatchdelete" />
+  </wsdl:message>
+  <wsdl:message name="newbatchdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:newbatchdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="newbatchshowSoapIn">
+    <wsdl:part name="parameters" element="tns:newbatchshow" />
+  </wsdl:message>
+  <wsdl:message name="newbatchshowSoapOut">
+    <wsdl:part name="parameters" element="tns:newbatchshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="newbatchinsertHttpGetIn">
+    <wsdl:part name="batchname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newbatchinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="newbatchupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newbatchupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="newbatchdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newbatchdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="newbatchshowHttpGetIn" />
+  <wsdl:message name="newbatchshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="newbatchinsertHttpPostIn">
+    <wsdl:part name="batchname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newbatchinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="newbatchupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newbatchupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="newbatchdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newbatchdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="newbatchshowHttpPostIn" />
+  <wsdl:message name="newbatchshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="newbatchSoap">
+    <wsdl:operation name="newbatchinsert">
+      <wsdl:input message="tns:newbatchinsertSoapIn" />
+      <wsdl:output message="tns:newbatchinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <wsdl:input message="tns:newbatchupdateSoapIn" />
+      <wsdl:output message="tns:newbatchupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <wsdl:input message="tns:newbatchdeleteSoapIn" />
+      <wsdl:output message="tns:newbatchdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <wsdl:input message="tns:newbatchshowSoapIn" />
+      <wsdl:output message="tns:newbatchshowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="newbatchHttpGet">
+    <wsdl:operation name="newbatchinsert">
+      <wsdl:input message="tns:newbatchinsertHttpGetIn" />
+      <wsdl:output message="tns:newbatchinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <wsdl:input message="tns:newbatchupdateHttpGetIn" />
+      <wsdl:output message="tns:newbatchupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <wsdl:input message="tns:newbatchdeleteHttpGetIn" />
+      <wsdl:output message="tns:newbatchdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <wsdl:input message="tns:newbatchshowHttpGetIn" />
+      <wsdl:output message="tns:newbatchshowHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="newbatchHttpPost">
+    <wsdl:operation name="newbatchinsert">
+      <wsdl:input message="tns:newbatchinsertHttpPostIn" />
+      <wsdl:output message="tns:newbatchinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <wsdl:input message="tns:newbatchupdateHttpPostIn" />
+      <wsdl:output message="tns:newbatchupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <wsdl:input message="tns:newbatchdeleteHttpPostIn" />
+      <wsdl:output message="tns:newbatchdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <wsdl:input message="tns:newbatchshowHttpPostIn" />
+      <wsdl:output message="tns:newbatchshowHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="newbatchSoap" type="tns:newbatchSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="newbatchinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="newbatchSoap12" type="tns:newbatchSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="newbatchinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/newbatchshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="newbatchHttpGet" type="tns:newbatchHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="newbatchinsert">
+      <http:operation location="/newbatchinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <http:operation location="/newbatchupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <http:operation location="/newbatchdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <http:operation location="/newbatchshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="newbatchHttpPost" type="tns:newbatchHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="newbatchinsert">
+      <http:operation location="/newbatchinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchupdate">
+      <http:operation location="/newbatchupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchdelete">
+      <http:operation location="/newbatchdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newbatchshow">
+      <http:operation location="/newbatchshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="newbatch">
+    <wsdl:port name="newbatchSoap" binding="tns:newbatchSoap">
+      <soap:address location="http://localhost:6050/school_management/Admin/newbatch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="newbatchSoap12" binding="tns:newbatchSoap12">
+      <soap12:address location="http://localhost:6050/school_management/Admin/newbatch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="newbatchHttpGet" binding="tns:newbatchHttpGet">
+      <http:address location="http://localhost:6050/school_management/Admin/newbatch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="newbatchHttpPost" binding="tns:newbatchHttpPost">
+      <http:address location="http://localhost:6050/school_management/Admin/newbatch.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

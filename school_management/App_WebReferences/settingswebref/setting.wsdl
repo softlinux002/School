@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschoolinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschoolinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addschoolinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschoolupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschoolupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addschoolupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschooldelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschooldeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addschooldeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addschoolshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="addschoolshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addschoolshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="addschoolinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:addschoolinsert" />
+  </wsdl:message>
+  <wsdl:message name="addschoolinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:addschoolinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="addschoolupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:addschoolupdate" />
+  </wsdl:message>
+  <wsdl:message name="addschoolupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:addschoolupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="addschooldeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:addschooldelete" />
+  </wsdl:message>
+  <wsdl:message name="addschooldeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:addschooldeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="addschoolshowSoapIn">
+    <wsdl:part name="parameters" element="tns:addschoolshow" />
+  </wsdl:message>
+  <wsdl:message name="addschoolshowSoapOut">
+    <wsdl:part name="parameters" element="tns:addschoolshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpGetIn" />
+  <wsdl:message name="showHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="addschoolinsertHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addschoolinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addschoolupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addschoolupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addschooldeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addschooldeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addschoolshowHttpGetIn" />
+  <wsdl:message name="addschoolshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpPostIn" />
+  <wsdl:message name="showHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="addschoolinsertHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addschoolinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addschoolupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addschoolupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addschooldeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addschooldeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addschoolshowHttpPostIn" />
+  <wsdl:message name="addschoolshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="settingSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <wsdl:input message="tns:addschoolinsertSoapIn" />
+      <wsdl:output message="tns:addschoolinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <wsdl:input message="tns:addschoolupdateSoapIn" />
+      <wsdl:output message="tns:addschoolupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <wsdl:input message="tns:addschooldeleteSoapIn" />
+      <wsdl:output message="tns:addschooldeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <wsdl:input message="tns:addschoolshowSoapIn" />
+      <wsdl:output message="tns:addschoolshowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="settingHttpGet">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpGetIn" />
+      <wsdl:output message="tns:insertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpGetIn" />
+      <wsdl:output message="tns:updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpGetIn" />
+      <wsdl:output message="tns:deleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpGetIn" />
+      <wsdl:output message="tns:showHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <wsdl:input message="tns:addschoolinsertHttpGetIn" />
+      <wsdl:output message="tns:addschoolinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <wsdl:input message="tns:addschoolupdateHttpGetIn" />
+      <wsdl:output message="tns:addschoolupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <wsdl:input message="tns:addschooldeleteHttpGetIn" />
+      <wsdl:output message="tns:addschooldeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <wsdl:input message="tns:addschoolshowHttpGetIn" />
+      <wsdl:output message="tns:addschoolshowHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="settingHttpPost">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpPostIn" />
+      <wsdl:output message="tns:insertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpPostIn" />
+      <wsdl:output message="tns:updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpPostIn" />
+      <wsdl:output message="tns:deleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpPostIn" />
+      <wsdl:output message="tns:showHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <wsdl:input message="tns:addschoolinsertHttpPostIn" />
+      <wsdl:output message="tns:addschoolinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <wsdl:input message="tns:addschoolupdateHttpPostIn" />
+      <wsdl:output message="tns:addschoolupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <wsdl:input message="tns:addschooldeleteHttpPostIn" />
+      <wsdl:output message="tns:addschooldeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <wsdl:input message="tns:addschoolshowHttpPostIn" />
+      <wsdl:output message="tns:addschoolshowHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="settingSoap" type="tns:settingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addschoolinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addschoolupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addschooldelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addschoolshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="settingSoap12" type="tns:settingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addschoolinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addschoolupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addschooldelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addschoolshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="settingHttpGet" type="tns:settingHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <http:operation location="/addschoolinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <http:operation location="/addschoolupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <http:operation location="/addschooldelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <http:operation location="/addschoolshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="settingHttpPost" type="tns:settingHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolinsert">
+      <http:operation location="/addschoolinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolupdate">
+      <http:operation location="/addschoolupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschooldelete">
+      <http:operation location="/addschooldelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addschoolshow">
+      <http:operation location="/addschoolshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="setting">
+    <wsdl:port name="settingSoap" binding="tns:settingSoap">
+      <soap:address location="http://localhost:6050/school_management/Admin/setting.asmx" />
+    </wsdl:port>
+    <wsdl:port name="settingSoap12" binding="tns:settingSoap12">
+      <soap12:address location="http://localhost:6050/school_management/Admin/setting.asmx" />
+    </wsdl:port>
+    <wsdl:port name="settingHttpGet" binding="tns:settingHttpGet">
+      <http:address location="http://localhost:6050/school_management/Admin/setting.asmx" />
+    </wsdl:port>
+    <wsdl:port name="settingHttpPost" binding="tns:settingHttpPost">
+      <http:address location="http://localhost:6050/school_management/Admin/setting.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

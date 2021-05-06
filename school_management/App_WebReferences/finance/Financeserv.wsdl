@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="admission" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="admissiondate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blood" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="admission" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="admissiondate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blood" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="studentshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="studentshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="complaint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addcomplaintinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="complaint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addcomplaintupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addcomplaintdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcomplaintshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="addcomplaintshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addcomplaintshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pfname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qualification" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="occupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="income" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paren" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parentinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pfname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qualification" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="occupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="income" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paren" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parentupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parentdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parentshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="parentshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:studentinsert" />
+  </wsdl:message>
+  <wsdl:message name="studentinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:studentinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:studentupdate" />
+  </wsdl:message>
+  <wsdl:message name="studentupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:studentupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:studentdelete" />
+  </wsdl:message>
+  <wsdl:message name="studentdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:studentdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentshowSoapIn">
+    <wsdl:part name="parameters" element="tns:studentshow" />
+  </wsdl:message>
+  <wsdl:message name="studentshowSoapOut">
+    <wsdl:part name="parameters" element="tns:studentshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:addcomplaintinsert" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:addcomplaintinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:addcomplaintupdate" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:addcomplaintupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:addcomplaintdelete" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:addcomplaintdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintshowSoapIn">
+    <wsdl:part name="parameters" element="tns:addcomplaintshow" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintshowSoapOut">
+    <wsdl:part name="parameters" element="tns:addcomplaintshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="parentinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:parentinsert" />
+  </wsdl:message>
+  <wsdl:message name="parentinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:parentinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="parentupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:parentupdate" />
+  </wsdl:message>
+  <wsdl:message name="parentupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:parentupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="parentdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:parentdelete" />
+  </wsdl:message>
+  <wsdl:message name="parentdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:parentdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="parentshowSoapIn">
+    <wsdl:part name="parameters" element="tns:parentshow" />
+  </wsdl:message>
+  <wsdl:message name="parentshowSoapOut">
+    <wsdl:part name="parameters" element="tns:parentshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="fee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="fee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpGetIn" />
+  <wsdl:message name="showHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="studentinsertHttpGetIn">
+    <wsdl:part name="admission" type="s:string" />
+    <wsdl:part name="admissiondate" type="s:string" />
+    <wsdl:part name="blood" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="mname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="state" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="pass1" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="docname" type="s:string" />
+    <wsdl:part name="image1" type="s:string" />
+    <wsdl:part name="stu" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="admission" type="s:string" />
+    <wsdl:part name="admissiondate" type="s:string" />
+    <wsdl:part name="blood" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="mname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="state" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="pass1" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="docname" type="s:string" />
+    <wsdl:part name="image1" type="s:string" />
+    <wsdl:part name="stu" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentshowHttpGetIn" />
+  <wsdl:message name="studentshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintinsertHttpGetIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintshowHttpGetIn" />
+  <wsdl:message name="addcomplaintshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="parentinsertHttpGetIn">
+    <wsdl:part name="pfname" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="relation" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="qualification" type="s:string" />
+    <wsdl:part name="occupation" type="s:string" />
+    <wsdl:part name="income" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="paren" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="parentinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="parentupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="pfname" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="relation" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="qualification" type="s:string" />
+    <wsdl:part name="occupation" type="s:string" />
+    <wsdl:part name="income" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="paren" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="parentupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="parentdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="parentdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="parentshowHttpGetIn" />
+  <wsdl:message name="parentshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="fee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="fee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpPostIn" />
+  <wsdl:message name="showHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="studentinsertHttpPostIn">
+    <wsdl:part name="admission" type="s:string" />
+    <wsdl:part name="admissiondate" type="s:string" />
+    <wsdl:part name="blood" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="mname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="state" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="pass1" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="docname" type="s:string" />
+    <wsdl:part name="image1" type="s:string" />
+    <wsdl:part name="stu" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="admission" type="s:string" />
+    <wsdl:part name="admissiondate" type="s:string" />
+    <wsdl:part name="blood" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="mname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="state" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+    <wsdl:part name="pass1" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="docname" type="s:string" />
+    <wsdl:part name="image1" type="s:string" />
+    <wsdl:part name="stu" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentshowHttpPostIn" />
+  <wsdl:message name="studentshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintinsertHttpPostIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addcomplaintshowHttpPostIn" />
+  <wsdl:message name="addcomplaintshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="parentinsertHttpPostIn">
+    <wsdl:part name="pfname" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="relation" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="qualification" type="s:string" />
+    <wsdl:part name="occupation" type="s:string" />
+    <wsdl:part name="income" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="paren" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="parentinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="parentupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="pfname" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="relation" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="qualification" type="s:string" />
+    <wsdl:part name="occupation" type="s:string" />
+    <wsdl:part name="income" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="paren" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="parentupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="parentdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="parentdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="parentshowHttpPostIn" />
+  <wsdl:message name="parentshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="FinanceservSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <wsdl:input message="tns:studentinsertSoapIn" />
+      <wsdl:output message="tns:studentinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <wsdl:input message="tns:studentupdateSoapIn" />
+      <wsdl:output message="tns:studentupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <wsdl:input message="tns:studentdeleteSoapIn" />
+      <wsdl:output message="tns:studentdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <wsdl:input message="tns:studentshowSoapIn" />
+      <wsdl:output message="tns:studentshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <wsdl:input message="tns:addcomplaintinsertSoapIn" />
+      <wsdl:output message="tns:addcomplaintinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <wsdl:input message="tns:addcomplaintupdateSoapIn" />
+      <wsdl:output message="tns:addcomplaintupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <wsdl:input message="tns:addcomplaintdeleteSoapIn" />
+      <wsdl:output message="tns:addcomplaintdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <wsdl:input message="tns:addcomplaintshowSoapIn" />
+      <wsdl:output message="tns:addcomplaintshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <wsdl:input message="tns:parentinsertSoapIn" />
+      <wsdl:output message="tns:parentinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <wsdl:input message="tns:parentupdateSoapIn" />
+      <wsdl:output message="tns:parentupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <wsdl:input message="tns:parentdeleteSoapIn" />
+      <wsdl:output message="tns:parentdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <wsdl:input message="tns:parentshowSoapIn" />
+      <wsdl:output message="tns:parentshowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FinanceservHttpGet">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpGetIn" />
+      <wsdl:output message="tns:insertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpGetIn" />
+      <wsdl:output message="tns:updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpGetIn" />
+      <wsdl:output message="tns:deleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpGetIn" />
+      <wsdl:output message="tns:showHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <wsdl:input message="tns:studentinsertHttpGetIn" />
+      <wsdl:output message="tns:studentinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <wsdl:input message="tns:studentupdateHttpGetIn" />
+      <wsdl:output message="tns:studentupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <wsdl:input message="tns:studentdeleteHttpGetIn" />
+      <wsdl:output message="tns:studentdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <wsdl:input message="tns:studentshowHttpGetIn" />
+      <wsdl:output message="tns:studentshowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <wsdl:input message="tns:addcomplaintinsertHttpGetIn" />
+      <wsdl:output message="tns:addcomplaintinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <wsdl:input message="tns:addcomplaintupdateHttpGetIn" />
+      <wsdl:output message="tns:addcomplaintupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <wsdl:input message="tns:addcomplaintdeleteHttpGetIn" />
+      <wsdl:output message="tns:addcomplaintdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <wsdl:input message="tns:addcomplaintshowHttpGetIn" />
+      <wsdl:output message="tns:addcomplaintshowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <wsdl:input message="tns:parentinsertHttpGetIn" />
+      <wsdl:output message="tns:parentinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <wsdl:input message="tns:parentupdateHttpGetIn" />
+      <wsdl:output message="tns:parentupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <wsdl:input message="tns:parentdeleteHttpGetIn" />
+      <wsdl:output message="tns:parentdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <wsdl:input message="tns:parentshowHttpGetIn" />
+      <wsdl:output message="tns:parentshowHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FinanceservHttpPost">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpPostIn" />
+      <wsdl:output message="tns:insertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpPostIn" />
+      <wsdl:output message="tns:updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpPostIn" />
+      <wsdl:output message="tns:deleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpPostIn" />
+      <wsdl:output message="tns:showHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <wsdl:input message="tns:studentinsertHttpPostIn" />
+      <wsdl:output message="tns:studentinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <wsdl:input message="tns:studentupdateHttpPostIn" />
+      <wsdl:output message="tns:studentupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <wsdl:input message="tns:studentdeleteHttpPostIn" />
+      <wsdl:output message="tns:studentdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <wsdl:input message="tns:studentshowHttpPostIn" />
+      <wsdl:output message="tns:studentshowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <wsdl:input message="tns:addcomplaintinsertHttpPostIn" />
+      <wsdl:output message="tns:addcomplaintinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <wsdl:input message="tns:addcomplaintupdateHttpPostIn" />
+      <wsdl:output message="tns:addcomplaintupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <wsdl:input message="tns:addcomplaintdeleteHttpPostIn" />
+      <wsdl:output message="tns:addcomplaintdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <wsdl:input message="tns:addcomplaintshowHttpPostIn" />
+      <wsdl:output message="tns:addcomplaintshowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <wsdl:input message="tns:parentinsertHttpPostIn" />
+      <wsdl:output message="tns:parentinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <wsdl:input message="tns:parentupdateHttpPostIn" />
+      <wsdl:output message="tns:parentupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <wsdl:input message="tns:parentdeleteHttpPostIn" />
+      <wsdl:output message="tns:parentdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <wsdl:input message="tns:parentshowHttpPostIn" />
+      <wsdl:output message="tns:parentshowHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FinanceservSoap" type="tns:FinanceservSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/parentinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/parentupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/parentdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/parentshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FinanceservSoap12" type="tns:FinanceservSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addcomplaintshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/parentinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/parentupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/parentdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/parentshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FinanceservHttpGet" type="tns:FinanceservHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <http:operation location="/studentinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <http:operation location="/studentupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <http:operation location="/studentdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <http:operation location="/studentshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <http:operation location="/addcomplaintinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <http:operation location="/addcomplaintupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <http:operation location="/addcomplaintdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <http:operation location="/addcomplaintshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <http:operation location="/parentinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <http:operation location="/parentupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <http:operation location="/parentdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <http:operation location="/parentshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FinanceservHttpPost" type="tns:FinanceservHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentinsert">
+      <http:operation location="/studentinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentupdate">
+      <http:operation location="/studentupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentdelete">
+      <http:operation location="/studentdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentshow">
+      <http:operation location="/studentshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintinsert">
+      <http:operation location="/addcomplaintinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintupdate">
+      <http:operation location="/addcomplaintupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintdelete">
+      <http:operation location="/addcomplaintdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcomplaintshow">
+      <http:operation location="/addcomplaintshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentinsert">
+      <http:operation location="/parentinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentupdate">
+      <http:operation location="/parentupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentdelete">
+      <http:operation location="/parentdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parentshow">
+      <http:operation location="/parentshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Financeserv">
+    <wsdl:port name="FinanceservSoap" binding="tns:FinanceservSoap">
+      <soap:address location="http://localhost:6050/school_management/Admin/Financeserv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FinanceservSoap12" binding="tns:FinanceservSoap12">
+      <soap12:address location="http://localhost:6050/school_management/Admin/Financeserv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FinanceservHttpGet" binding="tns:FinanceservHttpGet">
+      <http:address location="http://localhost:6050/school_management/Admin/Financeserv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FinanceservHttpPost" binding="tns:FinanceservHttpPost">
+      <http:address location="http://localhost:6050/school_management/Admin/Financeserv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

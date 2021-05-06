@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fareinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="both" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fareinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fareinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fareupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="routename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="both" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fareupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fareupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="faredelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="faredeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="faredeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fareshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="fareshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fareshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stationpoint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="stationinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="routename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stationpoint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="stationupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="stationdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stationshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="stationshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stationshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="businsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="busno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busreg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drivername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drivercontact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="route" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="businsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="businsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busdetailupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="busno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busreg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drivername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drivercontact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="route" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busdetailupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="busdetailupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busdetaildelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busdetaildeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="busdetaildeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="busdetailshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="busdetailshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="busdetailshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustiminginsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickuptime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="droptime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustiminginsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bustiminginsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustimingupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickuptime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="droptime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustimingupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bustimingupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustimingdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustimingdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bustimingdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bustimingshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="bustimingshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bustimingshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="route" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wayside" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remain" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="allocatebusinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="route" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wayside" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remain" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="allocatebusupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="allocatebusdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allocatebusshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="allocatebusshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="allocatebusshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="fareinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:fareinsert" />
+  </wsdl:message>
+  <wsdl:message name="fareinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:fareinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="fareupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:fareupdate" />
+  </wsdl:message>
+  <wsdl:message name="fareupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:fareupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="faredeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:faredelete" />
+  </wsdl:message>
+  <wsdl:message name="faredeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:faredeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="fareshowSoapIn">
+    <wsdl:part name="parameters" element="tns:fareshow" />
+  </wsdl:message>
+  <wsdl:message name="fareshowSoapOut">
+    <wsdl:part name="parameters" element="tns:fareshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:stationinsert" />
+  </wsdl:message>
+  <wsdl:message name="stationinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:stationinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:stationupdate" />
+  </wsdl:message>
+  <wsdl:message name="stationupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:stationupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:stationdelete" />
+  </wsdl:message>
+  <wsdl:message name="stationdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:stationdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationshowSoapIn">
+    <wsdl:part name="parameters" element="tns:stationshow" />
+  </wsdl:message>
+  <wsdl:message name="stationshowSoapOut">
+    <wsdl:part name="parameters" element="tns:stationshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="businsertSoapIn">
+    <wsdl:part name="parameters" element="tns:businsert" />
+  </wsdl:message>
+  <wsdl:message name="businsertSoapOut">
+    <wsdl:part name="parameters" element="tns:businsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="busdetailupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:busdetailupdate" />
+  </wsdl:message>
+  <wsdl:message name="busdetailupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:busdetailupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="busdetaildeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:busdetaildelete" />
+  </wsdl:message>
+  <wsdl:message name="busdetaildeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:busdetaildeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="busdetailshowSoapIn">
+    <wsdl:part name="parameters" element="tns:busdetailshow" />
+  </wsdl:message>
+  <wsdl:message name="busdetailshowSoapOut">
+    <wsdl:part name="parameters" element="tns:busdetailshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="bustiminginsertSoapIn">
+    <wsdl:part name="parameters" element="tns:bustiminginsert" />
+  </wsdl:message>
+  <wsdl:message name="bustiminginsertSoapOut">
+    <wsdl:part name="parameters" element="tns:bustiminginsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="bustimingupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:bustimingupdate" />
+  </wsdl:message>
+  <wsdl:message name="bustimingupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:bustimingupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="bustimingdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:bustimingdelete" />
+  </wsdl:message>
+  <wsdl:message name="bustimingdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:bustimingdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="bustimingshowSoapIn">
+    <wsdl:part name="parameters" element="tns:bustimingshow" />
+  </wsdl:message>
+  <wsdl:message name="bustimingshowSoapOut">
+    <wsdl:part name="parameters" element="tns:bustimingshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:allocatebusinsert" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:allocatebusinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:allocatebusupdate" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:allocatebusupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:allocatebusdelete" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:allocatebusdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusshowSoapIn">
+    <wsdl:part name="parameters" element="tns:allocatebusshow" />
+  </wsdl:message>
+  <wsdl:message name="allocatebusshowSoapOut">
+    <wsdl:part name="parameters" element="tns:allocatebusshowResponse" />
+  </wsdl:message>
+  <wsdl:portType name="addrouteSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fareinsert">
+      <wsdl:input message="tns:fareinsertSoapIn" />
+      <wsdl:output message="tns:fareinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fareupdate">
+      <wsdl:input message="tns:fareupdateSoapIn" />
+      <wsdl:output message="tns:fareupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="faredelete">
+      <wsdl:input message="tns:faredeleteSoapIn" />
+      <wsdl:output message="tns:faredeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fareshow">
+      <wsdl:input message="tns:fareshowSoapIn" />
+      <wsdl:output message="tns:fareshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stationinsert">
+      <wsdl:input message="tns:stationinsertSoapIn" />
+      <wsdl:output message="tns:stationinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stationupdate">
+      <wsdl:input message="tns:stationupdateSoapIn" />
+      <wsdl:output message="tns:stationupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stationdelete">
+      <wsdl:input message="tns:stationdeleteSoapIn" />
+      <wsdl:output message="tns:stationdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stationshow">
+      <wsdl:input message="tns:stationshowSoapIn" />
+      <wsdl:output message="tns:stationshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="businsert">
+      <wsdl:input message="tns:businsertSoapIn" />
+      <wsdl:output message="tns:businsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="busdetailupdate">
+      <wsdl:input message="tns:busdetailupdateSoapIn" />
+      <wsdl:output message="tns:busdetailupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="busdetaildelete">
+      <wsdl:input message="tns:busdetaildeleteSoapIn" />
+      <wsdl:output message="tns:busdetaildeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="busdetailshow">
+      <wsdl:input message="tns:busdetailshowSoapIn" />
+      <wsdl:output message="tns:busdetailshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bustiminginsert">
+      <wsdl:input message="tns:bustiminginsertSoapIn" />
+      <wsdl:output message="tns:bustiminginsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bustimingupdate">
+      <wsdl:input message="tns:bustimingupdateSoapIn" />
+      <wsdl:output message="tns:bustimingupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bustimingdelete">
+      <wsdl:input message="tns:bustimingdeleteSoapIn" />
+      <wsdl:output message="tns:bustimingdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bustimingshow">
+      <wsdl:input message="tns:bustimingshowSoapIn" />
+      <wsdl:output message="tns:bustimingshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusinsert">
+      <wsdl:input message="tns:allocatebusinsertSoapIn" />
+      <wsdl:output message="tns:allocatebusinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusupdate">
+      <wsdl:input message="tns:allocatebusupdateSoapIn" />
+      <wsdl:output message="tns:allocatebusupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusdelete">
+      <wsdl:input message="tns:allocatebusdeleteSoapIn" />
+      <wsdl:output message="tns:allocatebusdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusshow">
+      <wsdl:input message="tns:allocatebusshowSoapIn" />
+      <wsdl:output message="tns:allocatebusshowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="addrouteSoap" type="tns:addrouteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fareinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/fareinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fareupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/fareupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faredelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/faredelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fareshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/fareshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/stationinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/stationupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/stationdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/stationshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="businsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/businsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busdetailupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/busdetailupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busdetaildelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/busdetaildelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busdetailshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/busdetailshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustiminginsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bustiminginsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustimingupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bustimingupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustimingdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bustimingdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustimingshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/bustimingshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="addrouteSoap12" type="tns:addrouteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fareinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/fareinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fareupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/fareupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faredelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/faredelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fareshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/fareshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/stationinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/stationupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/stationdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/stationshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="businsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/businsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busdetailupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/busdetailupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busdetaildelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/busdetaildelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busdetailshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/busdetailshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustiminginsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bustiminginsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustimingupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bustimingupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustimingdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bustimingdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bustimingshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/bustimingshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allocatebusshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/allocatebusshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="addroute">
+    <wsdl:port name="addrouteSoap" binding="tns:addrouteSoap">
+      <soap:address location="http://localhost:50893/school_management/Admin/addroute.asmx" />
+    </wsdl:port>
+    <wsdl:port name="addrouteSoap12" binding="tns:addrouteSoap12">
+      <soap12:address location="http://localhost:50893/school_management/Admin/addroute.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="catname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iteminsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itmcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itmname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quantity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iteminsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iteminsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itmcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itmname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quantity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="itemshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itmname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemlocinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itmname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemlocupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemlocdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="itemlocshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="itemlocshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemlocshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsupplierinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cperson" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tinno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsupplierinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addsupplierinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsupplierupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cperson" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tinno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsupplierupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addsupplierupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsupplierdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsupplierdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addsupplierdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addsuppliershow">
+        <s:complexType />
+      </s:element>
+      <s:element name="addsuppliershowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addsuppliershowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="issueiteminsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="worth" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="issueiteminsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="issueiteminsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="iteminsertSoapIn">
+    <wsdl:part name="parameters" element="tns:iteminsert" />
+  </wsdl:message>
+  <wsdl:message name="iteminsertSoapOut">
+    <wsdl:part name="parameters" element="tns:iteminsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:itemupdate" />
+  </wsdl:message>
+  <wsdl:message name="itemupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:itemupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:itemdelete" />
+  </wsdl:message>
+  <wsdl:message name="itemdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:itemdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemshowSoapIn">
+    <wsdl:part name="parameters" element="tns:itemshow" />
+  </wsdl:message>
+  <wsdl:message name="itemshowSoapOut">
+    <wsdl:part name="parameters" element="tns:itemshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemlocinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:itemlocinsert" />
+  </wsdl:message>
+  <wsdl:message name="itemlocinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:itemlocinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemlocupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:itemlocupdate" />
+  </wsdl:message>
+  <wsdl:message name="itemlocupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:itemlocupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemlocdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:itemlocdelete" />
+  </wsdl:message>
+  <wsdl:message name="itemlocdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:itemlocdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemlocshowSoapIn">
+    <wsdl:part name="parameters" element="tns:itemlocshow" />
+  </wsdl:message>
+  <wsdl:message name="itemlocshowSoapOut">
+    <wsdl:part name="parameters" element="tns:itemlocshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:addsupplierinsert" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:addsupplierinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:addsupplierupdate" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:addsupplierupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:addsupplierdelete" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:addsupplierdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="addsuppliershowSoapIn">
+    <wsdl:part name="parameters" element="tns:addsuppliershow" />
+  </wsdl:message>
+  <wsdl:message name="addsuppliershowSoapOut">
+    <wsdl:part name="parameters" element="tns:addsuppliershowResponse" />
+  </wsdl:message>
+  <wsdl:message name="issueiteminsertSoapIn">
+    <wsdl:part name="parameters" element="tns:issueiteminsert" />
+  </wsdl:message>
+  <wsdl:message name="issueiteminsertSoapOut">
+    <wsdl:part name="parameters" element="tns:issueiteminsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetIn">
+    <wsdl:part name="catname" type="s:string" />
+    <wsdl:part name="Des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="catname" type="s:string" />
+    <wsdl:part name="Des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpGetIn" />
+  <wsdl:message name="showHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="iteminsertHttpGetIn">
+    <wsdl:part name="itmcode" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="rate" type="s:string" />
+    <wsdl:part name="quantity" type="s:string" />
+    <wsdl:part name="stock" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="iteminsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="itmcode" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="rate" type="s:string" />
+    <wsdl:part name="quantity" type="s:string" />
+    <wsdl:part name="stock" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemshowHttpGetIn" />
+  <wsdl:message name="itemshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="itemlocinsertHttpGetIn">
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemlocinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemlocupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemlocupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemlocdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemlocdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemlocshowHttpGetIn" />
+  <wsdl:message name="itemlocshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierinsertHttpGetIn">
+    <wsdl:part name="vendor" type="s:string" />
+    <wsdl:part name="cperson" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="tinno" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="vendor" type="s:string" />
+    <wsdl:part name="cperson" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="tinno" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addsuppliershowHttpGetIn" />
+  <wsdl:message name="addsuppliershowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="issueiteminsertHttpGetIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="code" type="s:string" />
+    <wsdl:part name="item" type="s:string" />
+    <wsdl:part name="worth" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="issueiteminsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostIn">
+    <wsdl:part name="catname" type="s:string" />
+    <wsdl:part name="Des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="catname" type="s:string" />
+    <wsdl:part name="Des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpPostIn" />
+  <wsdl:message name="showHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="iteminsertHttpPostIn">
+    <wsdl:part name="itmcode" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="rate" type="s:string" />
+    <wsdl:part name="quantity" type="s:string" />
+    <wsdl:part name="stock" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="iteminsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="itmcode" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="rate" type="s:string" />
+    <wsdl:part name="quantity" type="s:string" />
+    <wsdl:part name="stock" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemshowHttpPostIn" />
+  <wsdl:message name="itemshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="itemlocinsertHttpPostIn">
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemlocinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemlocupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="itemlocation" type="s:string" />
+    <wsdl:part name="itmname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemlocupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemlocdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="itemlocdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="itemlocshowHttpPostIn" />
+  <wsdl:message name="itemlocshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierinsertHttpPostIn">
+    <wsdl:part name="vendor" type="s:string" />
+    <wsdl:part name="cperson" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="tinno" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="vendor" type="s:string" />
+    <wsdl:part name="cperson" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="tinno" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addsupplierdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="addsuppliershowHttpPostIn" />
+  <wsdl:message name="addsuppliershowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="issueiteminsertHttpPostIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="code" type="s:string" />
+    <wsdl:part name="item" type="s:string" />
+    <wsdl:part name="worth" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="issueiteminsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="inventservSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <wsdl:input message="tns:iteminsertSoapIn" />
+      <wsdl:output message="tns:iteminsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <wsdl:input message="tns:itemupdateSoapIn" />
+      <wsdl:output message="tns:itemupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <wsdl:input message="tns:itemdeleteSoapIn" />
+      <wsdl:output message="tns:itemdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <wsdl:input message="tns:itemshowSoapIn" />
+      <wsdl:output message="tns:itemshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <wsdl:input message="tns:itemlocinsertSoapIn" />
+      <wsdl:output message="tns:itemlocinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <wsdl:input message="tns:itemlocupdateSoapIn" />
+      <wsdl:output message="tns:itemlocupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <wsdl:input message="tns:itemlocdeleteSoapIn" />
+      <wsdl:output message="tns:itemlocdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <wsdl:input message="tns:itemlocshowSoapIn" />
+      <wsdl:output message="tns:itemlocshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <wsdl:input message="tns:addsupplierinsertSoapIn" />
+      <wsdl:output message="tns:addsupplierinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <wsdl:input message="tns:addsupplierupdateSoapIn" />
+      <wsdl:output message="tns:addsupplierupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <wsdl:input message="tns:addsupplierdeleteSoapIn" />
+      <wsdl:output message="tns:addsupplierdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <wsdl:input message="tns:addsuppliershowSoapIn" />
+      <wsdl:output message="tns:addsuppliershowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <wsdl:input message="tns:issueiteminsertSoapIn" />
+      <wsdl:output message="tns:issueiteminsertSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="inventservHttpGet">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpGetIn" />
+      <wsdl:output message="tns:insertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpGetIn" />
+      <wsdl:output message="tns:updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpGetIn" />
+      <wsdl:output message="tns:deleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpGetIn" />
+      <wsdl:output message="tns:showHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <wsdl:input message="tns:iteminsertHttpGetIn" />
+      <wsdl:output message="tns:iteminsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <wsdl:input message="tns:itemupdateHttpGetIn" />
+      <wsdl:output message="tns:itemupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <wsdl:input message="tns:itemdeleteHttpGetIn" />
+      <wsdl:output message="tns:itemdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <wsdl:input message="tns:itemshowHttpGetIn" />
+      <wsdl:output message="tns:itemshowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <wsdl:input message="tns:itemlocinsertHttpGetIn" />
+      <wsdl:output message="tns:itemlocinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <wsdl:input message="tns:itemlocupdateHttpGetIn" />
+      <wsdl:output message="tns:itemlocupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <wsdl:input message="tns:itemlocdeleteHttpGetIn" />
+      <wsdl:output message="tns:itemlocdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <wsdl:input message="tns:itemlocshowHttpGetIn" />
+      <wsdl:output message="tns:itemlocshowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <wsdl:input message="tns:addsupplierinsertHttpGetIn" />
+      <wsdl:output message="tns:addsupplierinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <wsdl:input message="tns:addsupplierupdateHttpGetIn" />
+      <wsdl:output message="tns:addsupplierupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <wsdl:input message="tns:addsupplierdeleteHttpGetIn" />
+      <wsdl:output message="tns:addsupplierdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <wsdl:input message="tns:addsuppliershowHttpGetIn" />
+      <wsdl:output message="tns:addsuppliershowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <wsdl:input message="tns:issueiteminsertHttpGetIn" />
+      <wsdl:output message="tns:issueiteminsertHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="inventservHttpPost">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpPostIn" />
+      <wsdl:output message="tns:insertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpPostIn" />
+      <wsdl:output message="tns:updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpPostIn" />
+      <wsdl:output message="tns:deleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpPostIn" />
+      <wsdl:output message="tns:showHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <wsdl:input message="tns:iteminsertHttpPostIn" />
+      <wsdl:output message="tns:iteminsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <wsdl:input message="tns:itemupdateHttpPostIn" />
+      <wsdl:output message="tns:itemupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <wsdl:input message="tns:itemdeleteHttpPostIn" />
+      <wsdl:output message="tns:itemdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <wsdl:input message="tns:itemshowHttpPostIn" />
+      <wsdl:output message="tns:itemshowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <wsdl:input message="tns:itemlocinsertHttpPostIn" />
+      <wsdl:output message="tns:itemlocinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <wsdl:input message="tns:itemlocupdateHttpPostIn" />
+      <wsdl:output message="tns:itemlocupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <wsdl:input message="tns:itemlocdeleteHttpPostIn" />
+      <wsdl:output message="tns:itemlocdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <wsdl:input message="tns:itemlocshowHttpPostIn" />
+      <wsdl:output message="tns:itemlocshowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <wsdl:input message="tns:addsupplierinsertHttpPostIn" />
+      <wsdl:output message="tns:addsupplierinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <wsdl:input message="tns:addsupplierupdateHttpPostIn" />
+      <wsdl:output message="tns:addsupplierupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <wsdl:input message="tns:addsupplierdeleteHttpPostIn" />
+      <wsdl:output message="tns:addsupplierdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <wsdl:input message="tns:addsuppliershowHttpPostIn" />
+      <wsdl:output message="tns:addsuppliershowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <wsdl:input message="tns:issueiteminsertHttpPostIn" />
+      <wsdl:output message="tns:issueiteminsertHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="inventservSoap" type="tns:inventservSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/iteminsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addsupplierinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addsupplierupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addsupplierdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/addsuppliershow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/issueiteminsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="inventservSoap12" type="tns:inventservSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/iteminsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/itemlocshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addsupplierinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addsupplierupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addsupplierdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/addsuppliershow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/issueiteminsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="inventservHttpGet" type="tns:inventservHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <http:operation location="/iteminsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <http:operation location="/itemupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <http:operation location="/itemdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <http:operation location="/itemshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <http:operation location="/itemlocinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <http:operation location="/itemlocupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <http:operation location="/itemlocdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <http:operation location="/itemlocshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <http:operation location="/addsupplierinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <http:operation location="/addsupplierupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <http:operation location="/addsupplierdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <http:operation location="/addsuppliershow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <http:operation location="/issueiteminsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="inventservHttpPost" type="tns:inventservHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iteminsert">
+      <http:operation location="/iteminsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemupdate">
+      <http:operation location="/itemupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemdelete">
+      <http:operation location="/itemdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemshow">
+      <http:operation location="/itemshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocinsert">
+      <http:operation location="/itemlocinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocupdate">
+      <http:operation location="/itemlocupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocdelete">
+      <http:operation location="/itemlocdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="itemlocshow">
+      <http:operation location="/itemlocshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierinsert">
+      <http:operation location="/addsupplierinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierupdate">
+      <http:operation location="/addsupplierupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsupplierdelete">
+      <http:operation location="/addsupplierdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addsuppliershow">
+      <http:operation location="/addsuppliershow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="issueiteminsert">
+      <http:operation location="/issueiteminsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="inventserv">
+    <wsdl:port name="inventservSoap" binding="tns:inventservSoap">
+      <soap:address location="http://localhost:6050/school_management/Admin/inventserv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="inventservSoap12" binding="tns:inventservSoap12">
+      <soap12:address location="http://localhost:6050/school_management/Admin/inventserv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="inventservHttpGet" binding="tns:inventservHttpGet">
+      <http:address location="http://localhost:6050/school_management/Admin/inventserv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="inventservHttpPost" binding="tns:inventservHttpPost">
+      <http:address location="http://localhost:6050/school_management/Admin/inventserv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

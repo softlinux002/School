@@ -1,0 +1,728 @@
+﻿
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Fedena</title>
+
+
+<link href="stylesheets/application.css?1438609672" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/popup.css?1401526830" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/_styles/ui.all.css?1401526827" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/modalbox.css?1401526830" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/autosuggest-menu.css?1438609672" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/attendances/index.css?1438609671" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/alumni_link_icon.css?1434349020" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/form_builder/form_builder_icon.css?1415967173" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/themes/12/theme_css.css?1447664864" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/calendar.css?1425641319" media="screen" rel="stylesheet" type="text/css" />
+<link href="stylesheets/fonts/1/font.css?1447664864" media="screen" rel="stylesheet" type="text/css" />
+<script src="javascripts/jquery/jquery-1.9.1.min.js?1401532347" type="text/javascript"></script>
+<script type="text/javascript">
+    var s = jQuery.noConflict();
+    s(document).ready(function () {
+        set_link_active();
+    });
+
+    function set_link_active() {
+        s('.top-right-link').each(function (i, el) {
+            if (s(el).parent().attr('href').toString() == document.location.pathname.toString()) {
+                s(el).addClass("top-right-link-active");
+            }
+        });
+    }
+
+</script>
+
+<script src="javascripts/cache/javascripts/all.js?1401526826" type="text/javascript"></script>
+<script src="javascripts/scripts/nicetitle.js?1401526824" type="text/javascript"></script>
+<script src="javascripts/droplicious.js?1401526826" type="text/javascript"></script>
+
+<script src="javascripts/builder.js?1401526826" type="text/javascript"></script>
+<script src="javascripts/modalbox.js?1401526826" type="text/javascript"></script>
+
+
+
+
+
+
+
+<script src="javascripts/calendar_date_select/calendar_date_select.js?1429013060" type="text/javascript"></script>
+<script src="javascripts/calendar_date_select/format_iso_date.js?1425641432" type="text/javascript"></script>
+
+
+
+<script src="javascripts/fedena_plugin.js?1401526826" type="text/javascript"></script>
+
+  
+    <script src="javascripts/attendance.js?1438609647" type="text/javascript"></script>
+<script src="javascripts/date.js?1401526826" type="text/javascript"></script>
+  
+  <!--[if IE]>
+  <style>
+
+  .present{
+    color:#fff;
+    padding:5px;
+    background:#FFF;
+  }
+  .td-mark, .td-name{
+    background:#FFF;
+  }
+
+  </style>
+  <![endif]-->
+
+
+<script type="text/javascript">
+    document.observe("dom:loaded", function () {
+
+        if ('false'=='true') {
+
+            j('.link-box').each(function () {
+                if (j(this).children('.link-heading').children().length == 0) {
+                    j(this).hide()
+                }
+            })
+        }
+
+        render_generic_hook([])
+    });
+</script>
+
+
+<script src="javascripts/jquery/jquery-ui.min.js?1401532347" type="text/javascript"></script>
+<script src="javascripts/jquery/jquery.hotkeys.js?1401532347" type="text/javascript"></script>
+<script src="javascripts/jquery/jquery.als-1.5.min.js?1410499962" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var j = jQuery.noConflict();
+    document.observe("dom:loaded", function () {
+        $$('.level-1')[0].hide();
+    });
+    function myfunction() {
+        $$('.level-1')[0].hide();
+    }
+    j(document).click(function (event) {
+        var myarr = ["[object HTMLHeadingElement]", "[object HTMLBodyElement]", "[object HTMLDivElement]"]
+        var contains = (myarr.indexOf(event.target.toString()) > -1);
+        if (contains) {
+            $$('.level-1')[0].hide();
+            j('#up-arrow-img').hide();
+            j('#profile-link').removeClass('profile-link-active');
+            j('#lower-profile-link').removeClass('top-right-link-active');
+        }
+
+    });
+    j(document).ready(function () {
+        j("#upper-menu-div").click(function (e) {
+            e.stopPropagation();
+            j(".child-link-box").each(function () {
+                j(this).css("display", "none");
+            });
+            j(".arrow-right").css("display", "none");
+            j(".arrow-left").css("display", "none");
+        });
+        j('.nav-links').click(function () {
+            j('#lower-link-div').scrollTop(0);
+        });
+        j(document).bind("click", function () {
+            j("#upper-menu-div").slideUp();
+            j("#show-menu").removeClass("show-menu-active");
+            j("#link-menu").removeClass("top-right-link-active");
+        });
+
+    });
+
+    function upper_st_switch(e) {
+        e.stopPropagation();
+        j('.level-1').toggle();
+        j('#up-arrow-img').toggle();
+        j('#profile-link').toggleClass('profile-link-active');
+        j('#up-arrow-img').removeClass('arrow-img-low');
+        j('#up-arrow-img').addClass('arrow-img-high');
+        j('.level-1').css('position', 'absolute');
+    }
+
+    function lower_st_switch(e) {
+        e.stopPropagation();
+        j('.level-1').toggle();
+        j('#up-arrow-img').toggle();
+        j('#lower-profile-link').toggleClass('top-right-link-active');
+        j('.level-1').css('position', 'fixed');
+        j('#up-arrow-img').removeClass('arrow-img-high');
+        j('#up-arrow-img').addClass('arrow-img-low');
+    }
+
+    function show_quick_links() {
+        j.ajax({
+            type: 'POST',
+            url: "/user/show_quick_links",
+            data: {
+
+            },
+            beforeSend: function () {
+                if (j("#upper-menu-div").is(':hidden')) {
+                    j(".show-menu-back").css("background", "none");
+                    j(".show-menu-back").prepend('<img class="menu-loader" border="0" align="absmiddle" src="/images/fedena_loader.gif">')
+                }
+                else {
+                    j("#lower-link-div").css("display", "none");
+                    j("#loader-div").css("display", "block");
+                }
+            },
+            success: function (data) {
+                j("#lower-link-div").html(data);
+                j(".nav-links").each(function () {
+                    j(this).removeClass("nav-links-active");
+                    j(this).removeClass("themed_text");
+                })
+                j("#quick_links").addClass("nav-links-active");
+                j("#quick_links").addClass("themed_text");
+                var col_no = 0;
+                j(".parent-link").each(function () {
+                    j("#col_" + col_no).append(this);
+                    col_no += 1;
+                    if (col_no == 4)
+                        col_no = 0;
+                });
+                j(".parent-link").hover(
+                        function () {
+                            var p = j(this);
+                            var main_pos = j("#lower-link-div").offset();
+                            var pos = p.position();
+                            var off = p.offset();
+                            var h = p.height();
+                            var w = p.width();
+                            var c_b = j(this).find(".child-link-box");
+                            if (c_b.length !== 0) {
+                                var c_width = c_b.width();
+                                var c_height = c_b.height();
+                                c_b.css({ top: 8, left: w});
+                                c_b.css("display", "block");
+                                c_b.click(function (e) {
+                                    e.stopPropagation();
+                                });
+                                var c_pos = c_b.offset();
+                                var main_bottom = main_pos.top + j("#lower-link-div").height();
+                                var child_bottom = c_pos.top + c_height;
+                                if (child_bottom > main_bottom) {
+                                    j(this).attr('style', '');
+                                    if ((off.top + (10 - (child_bottom - main_bottom))) < (main_pos.top)) {
+                                        c_b.css({ top: (0 - (off.top - main_pos.top))});
+                                    }
+                                    else {
+                                        c_b.css({ top: (10 - (child_bottom - main_bottom))});
+                                    }
+                                }
+                                var main_right = main_pos.left + j("#lower-link-div").width();
+                                var child_right = c_pos.left + c_width;
+                                if (child_right > main_right) {
+                                    c_b.css({left: 0 - c_width});
+                                }
+                                else
+                                    j(".child_cols").removeClass("right-float");
+                            }
+                        },
+                        function () {
+                            j(this).find(".child-link-box").css("display", "none");
+                        }
+                );
+                if (j("#upper-menu-div").is(':hidden')) {
+                    j("#upper-menu-div").slideDown();
+                    j("#show-menu").addClass("show-menu-active");
+                    j(".show-menu-back").find('img').remove();
+                    j(".show-menu-back").removeAttr('style');
+                }
+                else {
+                    j("#lower-link-div").css("display", "block");
+                    j("#loader-div").css("display", "none");
+                }
+
+            }
+        })
+    }
+    function show_all_features(th_is) {
+        var cur_id = j(th_is).attr("id");
+        var cat_id = cur_id.replace("-link", "");
+        j.ajax({
+            type: 'POST',
+            url: "/user/show_all_features",
+            data: {
+                cat_id: cat_id
+            },
+            beforeSend: function () {
+                j("#lower-link-div").css("display", "none");
+                j("#loader-div").css("display", "block");
+            },
+            success: function (data) {
+                j("#lower-link-div").html(data);
+                j(".nav-links").each(function () {
+                    j(this).removeClass("nav-links-active");
+                    j(this).removeClass("themed_text");
+                })
+                j(th_is).find(".nav-links").addClass("nav-links-active");
+                j(th_is).find(".nav-links").addClass("themed_text");
+                var col_no = 0;
+                j(".parent-link").each(function () {
+                    j("#col_" + col_no).append(this);
+                    col_no += 1;
+                    if (col_no == 4)
+                        col_no = 0;
+                });
+                j(".parent-link").hover(
+                        function () {
+                            var p = j(this);
+                            var main_pos = j("#lower-link-div").offset();
+                            var pos = p.position();
+                            var off = p.offset();
+                            var h = p.height();
+                            var w = p.width();
+                            var c_b = j(this).find(".child-link-box");
+                            if (c_b.length !== 0) {
+                                var c_width = c_b.width();
+                                var c_height = c_b.height();
+                                c_b.css({ top: 8, left: w});
+                                c_b.css("display", "block");
+                                c_b.click(function (e) {
+                                    e.stopPropagation();
+                                });
+                                var c_pos = c_b.offset();
+                                var main_bottom = main_pos.top + j("#lower-link-div").height();
+                                var child_bottom = c_pos.top + c_height;
+                                if (child_bottom > main_bottom) {
+                                    j(this).attr('style', '');
+                                    if ((off.top + (10 - (child_bottom - main_bottom))) < (main_pos.top)) {
+                                        c_b.css({ top: (0 - (off.top - main_pos.top))});
+                                    }
+                                    else {
+                                        c_b.css({ top: (10 - (child_bottom - main_bottom))});
+                                    }
+                                }
+                                var main_right = main_pos.left + j("#lower-link-div").width();
+                                var child_right = c_pos.left + c_width;
+                                if (child_right > main_right) {
+                                    c_b.css({left: 0 - c_width});
+                                }
+                                else
+                                    j(".child_cols").removeClass("right-float");
+                            }
+                        },
+                        function () {
+                            j(this).find(".child-link-box").css("display", "none");
+                        }
+                );
+                j("#lower-link-div").css("display", "block");
+                j("#loader-div").css("display", "none");
+            }
+        })
+    }
+    function show_links(e) {
+        e.stopPropagation();
+        if (j("#upper-menu-div").is(':hidden')) {
+            j("#header-top").append(j("#upper-menu-div"))
+            j("#upper-menu-div").css('position', 'absolute');
+            j("#upper-menu-div").css('top', '35px');
+            show_quick_links();
+        }
+        else {
+            j("#upper-menu-div").slideUp();
+            j("#show-menu").removeClass("show-menu-active");
+        }
+        //if(j("#upper-menu-div").is(":visible")){
+        //show_quick_links();
+        //}
+    }
+    function lower_show_links(e) {
+        e.stopPropagation();
+        if (j("#upper-menu-div").is(':hidden')) {
+            j("#upper-menu-div").css('position', 'fixed');
+            j("#upper-menu-div").css('top', '36px');
+
+            j("#link-menu").addClass("top-right-link-active");
+
+            show_quick_links();
+        }
+        else {
+            j("#upper-menu-div").slideUp();
+            j("#show-menu").removeClass("show-menu-active");
+
+            j("#link-menu").removeClass("top-right-link-active");
+        }
+        //if(j("#upper-menu-div").is(":visible")){
+        //show_quick_links();
+        //}
+    }
+
+</script>
+
+    <script src="javascripts/normal_upload.js?1402997579" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div id="header_bg">
+  <div id="header_bottom">
+    <div class="header_content">
+      <div class="top-left-links">
+        <div id="lower-show-menu">
+          <a href="#" id="link-menu" onClick="lower_show_links(event);return false;"><div class='lower-menu-link' id='in-menu-link'><div class='show-menu-back'></div></div></a>
+        </div>
+      </div>
+      
+          <a href="/user/dashboard"><div id='institution-name'>Foradian School</div></a>
+      
+      <div class="right-links" id="top-right-links">
+        
+        
+            <a href="/reminder"><div class='top-right-link'><div id='message-link-img'></div></div></a>
+        
+        
+        <a href="#" onClick="lower_st_switch(event);return false;"><div class='top-right-link' id='lower-profile-link'><div id='profile-link-img'></div></div></a>
+        <div class="leg" style="width:40px;clear:both;">
+          <div id="profile-menu">
+            <li class="a">
+              <div id="switch-student">
+                <div id="up-arrow-img" style="display:none;"></div>
+                <ul class="level-1" style="display:none;">
+                  <li>
+                    <div class="ns">
+                      <div class="not-selected-list" style="margin-top:5px !important;">
+                        <a href="/user/profile/admin">Admin User</a></div>
+                      <br/>
+
+                      <div class="bottom-line"></div>
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <div class="ns">
+                      
+                      <div class="not-selected-list" style="margin-bottom:5px !important;"><a href="/user/logout">Log out</a></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </div>
+        </div>
+
+      </div>
+      <div id="outer-autosuggest-menu">
+        <script type="text/javascript">
+  var available_options = []
+  jq=jQuery.noConflict();
+  function __highlight(s, t) {
+    var matcher = new RegExp("("+jq.ui.autocomplete.escapeRegex(t)+")", "ig" );
+    return s.replace(matcher, "<strong>$1</strong>");
+  }
+
+  jq.ui.autocomplete.prototype._renderItem = function (ul, item) {
+    //  item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + jQuery.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+    if (item.menutype == 'action')    {
+      return jq("<li></li>")
+      .data("item.autocomplete",item)
+      .append("<a class='action'>"+ item.label +"</a>")
+      .appendTo(ul);
+    }
+    
+    return jq("<li></li>")
+    .data("item.autocomplete", item)
+    
+    .append("<a>" + __highlight(item.label, this.term) + "</a>")
+    .appendTo(ul);
+  };
+
+  jq(document).bind('keypress', 'q', function(){
+    // var actv_element=document.activeElement;
+    var actv_element=j(':focus');
+    if (j(actv_element).hasClass("redactor_editor")){
+      return true;
+    }
+    jq("input#autosuggest_menu_input").focus();
+    return false;
+  });
+  gotoLink = function(event,ui){
+    window.location.href = ui.item.value;
+    return false;
+  };
+  searchoptions = function (request,response){
+    var query=request.term;
+    var options = jq.ui.autocomplete.filter(available_options,query).slice(0,11);
+    options.push({'menutype': 'action',
+      'label' : 'Search students : <strong>'+query+'</strong>',
+      'value' : "/student/advanced_search?search%5Border%5D=&search%5Bname_or_admssn_no_as%5D="+query+"&commit=Search"})
+
+    options.push({'menutype': 'action',
+      'label' : 'Search employees: <strong>'+query+'</strong>',
+      'value' : "/employee/advanced_search?search%5Border%5D=&search%5Bname_or_employee_number_as%5D="+query+"&commit=Search"})
+
+    response(options)
+  }
+
+
+  jq(document).ready(function() {
+    jq("input#autosuggest_menu_input").autocomplete({
+      source: searchoptions,
+      select : gotoLink,
+      focus: function(event, ui) { return false; },
+      appendTo: '#menu-container'
+    });
+  });
+</script>
+<div id="menu-container"></div>
+<script src="/user/get_autosuggest_menuitems" type="text/javascript" async></script>
+
+<input id="autosuggest_menu_input" name="autosuggest_menu" placeholder="Search Actions, Links and People" type="text" value="" />
+
+      </div>
+    </div>
+  </div>
+  
+  <div id="menu-div">
+    <div id="upper-menu-div" style="display:none;">
+      <div id="outer-nav-div">
+        <div id="upper-nav-div">
+          <a href="#" onClick="show_quick_links();return false;"><div class='nav-links themed_hover_text' id='quick_links'>Quick Links</div></a>
+          
+          
+              <a href="#" id="1-link" onClick="show_all_features(this);return false;"><div class='nav-links themed_hover_text'>Academics</div></a>
+          
+              <a href="#" id="2-link" onClick="show_all_features(this);return false;"><div class='nav-links themed_hover_text'>Collaboration</div></a>
+          
+              <a href="#" id="3-link" onClick="show_all_features(this);return false;"><div class='nav-links themed_hover_text'>Data and Reports</div></a>
+          
+              <a href="#" id="4-link" onClick="show_all_features(this);return false;"><div class='nav-links themed_hover_text'>Administration</div></a>
+          
+              <a href="#" id="5-link" onClick="show_all_features(this);return false;"><div class='nav-links themed_hover_text'>Apps</div></a>
+          
+          <a href="/user/manage_quick_links" class="button-link themed_hover_text" id="manage-links">Manage Quick Links</a>
+        </div>
+      </div>
+      <div id="sep-div">
+
+      </div>
+      <div id="lower-link-div">
+
+      </div>
+      <div id="loader-div" style="display:none;">
+        <img class="quicklink-loader" border="0" align="absmiddle" src="/images/Loader-transparant.gif"/>
+
+        <div class="load-text">Loading</div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div id="content_wrapper">
+  <div id="side_bar">
+
+    <div id="sidebar_news_area">
+
+    </div>
+  </div>
+
+  <div id="content"> 
+
+<div id="content-header">
+  <div class='header-icon attendances-icon'></div>
+  <h1>Attendance register</h1>
+  <div class='header-sep'>|</div>
+  <div class='sub-header'>Attendance register</div>
+
+
+</div>
+<div id="page-yield">
+  <div class="bread_crumb">
+    
+    <a href="http://sswtbaldeepsingh66.sandbox.fedena.com/user/dashboard">Home</a> <div class = "bread-crumb-separator"> > </div> <a href="http://sswtbaldeepsingh66.sandbox.fedena.com/student_attendance">Attendance</a> <div class = "bread-crumb-separator"> > </div> Attendance register
+  </div>
+  <div class="label-field-pair">
+    <label>Select a batch</label>
+    <div class="text-input-bg">
+      
+
+  
+        <select id="batch_id" name="batch[id]" onchange="getjson(value);"><option value="">Select a batch</option>
+<option value="280539">G1 - G1(2014-2015)</option>
+<option value="280540">G2 - G2(2014-2015)</option>
+<option value="280541">G3 - G3(2014-2015)</option>
+<option value="280542">G4 - G4(2014-2015)</option>
+<option value="280543">G5 - G5(2014-2015)</option></select>
+      
+    </div>
+    <img align="absmiddle" alt="Loader" border="0" id="loader" src="/images/loader.gif?1401526824" style="display: none;margin-top: 10px;" />
+  </div>
+  <input id="time_zone" name="time_zone_date" type="hidden" value="2015-12-25" />
+
+
+  <div id="subjects"></div>
+  <div id="register"></div>
+  <div id="modal-box" style="display:none;"></div>
+</div>
+ </div>
+
+  <div class="extender"></div>
+</div>
+
+<div id="footer">
+  <div id="footer_logo">
+    <div id="powered_by">
+      Powered by
+      <a href=http://www.fedena.com/ target="_blank", class="themed_text">Fedena</a>
+    </div>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript">
+    window.intercomSettings = {
+        // TODO: The current logged in user's full name
+        name: "Admin User",
+        // TODO: The current logged in user's email address.
+        email: "sswtbaldeepsingh66@gmail.com",
+        // TODO: The current logged in user's sign-up date as a Unix timestamp.
+        created_at: "2015-12-24 12:56:48 UTC",
+        app_id: "tpmi5bd6",
+        user_id: "4608896",
+        last_url: window.location.hostname
+    };
+  //console.log("")
+  //if (1 > 4) 
+  //{
+    window.intercomSettings.widget = {
+        activator: "#IntercomDefaultWidget"
+    };
+  //        }
+  </script>
+  <script type="text/javascript">
+  //    document.observe("dom:loaded", function () {
+    (function () {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+      } else {
+        var d = document;
+        var i = function () {
+          i.c(arguments)
+        };
+        i.q = [];
+        i.c = function (args) {
+          i.q.push(args)
+        };
+        w.Intercom = i;
+        function l() {
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'https://widget.intercom.io/widget/tpmi5bd6';
+          var x = d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+        if (w.attachEvent) {
+          w.attachEvent('onload', l);
+        } else {
+          w.addEventListener('load', l, false);
+        }
+      }
+    })()
+    Intercom('trackUserEvent', window.location.pathname);
+  //    });
+  </script>
+
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    // finds current cursor position
+    var getCaretPos = function (id) {
+        var el = document.getElementById(id);
+        var rng, ii = -1;
+        if (typeof el.selectionStart == "number") {
+            ii = el.selectionStart;
+        }
+        else if (document.selection && el.createTextRange) {
+            rng = document.selection.createRange();
+            rng.collapse(true);
+            rng.moveStart("character", -el.value.length);
+            ii = rng.text.length;
+        }
+        return ii;
+    };
+
+    // sets current cursor position
+    var setCaretTo = function (id, pos) {
+        var obj = document.getElementById(id);
+        if (obj.createTextRange) {
+            var range = obj.createTextRange();
+            range.move("character", pos);
+            range.select();
+        }
+        else if (obj.selectionStart) {
+            obj.focus();
+            obj.setSelectionRange(pos, pos);
+        }
+    };
+
+    // makes sure each input field with set precision to accept only precisioned values (numbers & 1 decimal point only)
+    j(document).delegate('.precision_text', 'keypress', function (e) {
+        var id = j(this).attr('id');
+        var precision = parseInt("");
+        var pos = getCaretPos(id);
+        var key = e.which;
+        var val = j(this).val();
+        var dot = val.indexOf('.');
+        //console.log('pos:'+pos+'dot:'+dot+'keyCode:'+key);
+        if (( key >= 48 && key <= 57 ) || ( dot == -1 && key == 46 || dot > -1 && ( key >= 48 && key <= 57 )) || key == 8 || key == 0) {
+            //console.log('number('+ key + ') or dot('+ dot +')');
+            if (pos > dot && key >= 48 && key <= 57) {
+                var parts = val.split('.');
+                var decimal_part = parts[1];
+                if (parts.length > 1 && decimal_part.length >= precision) {
+                    e.preventDefault();
+                }
+            }
+        }
+        else {
+            e.preventDefault();
+        }
+    });
+
+    // prevents copy && paste in precisioned fields
+    var isCtrl = false;
+    j(document).delegate('.precision_text', 'keyup', function (e) {
+        if (e.keyCode == 17)
+            isCtrl = false;
+    });
+    // prevents copy && paste in precisioned fields
+    j(document).delegate('.precision_text', 'keydown', function (e) {
+        if (e.keyCode == 17)
+            isCtrl = true;
+        if ((((e.keyCode == 86) || (e.keyCode == 67)) && isCtrl == true) || (e.keyCode == 86))
+            e.preventDefault();
+    });
+
+    // prevents right click on precisioned fields
+    j(document).delegate('.precision_text', "contextmenu", function (e) {
+        e.preventDefault();
+    });
+    // Disable form double submit in through enter or other if any
+    j('form').one('submit', function (evt) {
+        j(this).on('submit', function (evt) {
+            evt.preventDefault();
+        });
+    });
+
+
+</script>

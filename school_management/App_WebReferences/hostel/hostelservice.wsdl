@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroominsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofroom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomtype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="available" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="charge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroominsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hostelroominsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroomupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofroom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomtype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="available" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="charge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroomupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hostelroomupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroomdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroomdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hostelroomdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hostelroomshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="hostelroomshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hostelroomshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregisterinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofroom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="available" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofstudent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="charge" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregisterinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studenthostelregisterinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregisterupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofroom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="available" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofstudent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="charge" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregisterupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studenthostelregisterupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregisterdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregisterdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studenthostelregisterdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studenthostelregistershow">
+        <s:complexType />
+      </s:element>
+      <s:element name="studenthostelregistershowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="studenthostelregistershowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeeinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hfee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remaining" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeeinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="payfeeinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeeupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hfee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remaining" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeeupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="payfeeupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeedelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeedeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="payfeedeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="payfeeshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="payfeeshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="payfeeshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefundinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofmonth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="totalamount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amountpay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="monthinhostel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refund" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefundinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="feerefundinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefundupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofmonth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="totalamount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amountpay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="monthinhostel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refund" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefundupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="feerefundupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefunddelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefunddeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="feerefunddeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feerefundshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="feerefundshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feerefundshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="hostelroominsertSoapIn">
+    <wsdl:part name="parameters" element="tns:hostelroominsert" />
+  </wsdl:message>
+  <wsdl:message name="hostelroominsertSoapOut">
+    <wsdl:part name="parameters" element="tns:hostelroominsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="hostelroomupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:hostelroomupdate" />
+  </wsdl:message>
+  <wsdl:message name="hostelroomupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:hostelroomupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="hostelroomdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:hostelroomdelete" />
+  </wsdl:message>
+  <wsdl:message name="hostelroomdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:hostelroomdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="hostelroomshowSoapIn">
+    <wsdl:part name="parameters" element="tns:hostelroomshow" />
+  </wsdl:message>
+  <wsdl:message name="hostelroomshowSoapOut">
+    <wsdl:part name="parameters" element="tns:hostelroomshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregisterinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:studenthostelregisterinsert" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregisterinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:studenthostelregisterinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregisterupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:studenthostelregisterupdate" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregisterupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:studenthostelregisterupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregisterdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:studenthostelregisterdelete" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregisterdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:studenthostelregisterdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregistershowSoapIn">
+    <wsdl:part name="parameters" element="tns:studenthostelregistershow" />
+  </wsdl:message>
+  <wsdl:message name="studenthostelregistershowSoapOut">
+    <wsdl:part name="parameters" element="tns:studenthostelregistershowResponse" />
+  </wsdl:message>
+  <wsdl:message name="payfeeinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:payfeeinsert" />
+  </wsdl:message>
+  <wsdl:message name="payfeeinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:payfeeinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="payfeeupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:payfeeupdate" />
+  </wsdl:message>
+  <wsdl:message name="payfeeupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:payfeeupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="payfeedeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:payfeedelete" />
+  </wsdl:message>
+  <wsdl:message name="payfeedeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:payfeedeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="payfeeshowSoapIn">
+    <wsdl:part name="parameters" element="tns:payfeeshow" />
+  </wsdl:message>
+  <wsdl:message name="payfeeshowSoapOut">
+    <wsdl:part name="parameters" element="tns:payfeeshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="feerefundinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:feerefundinsert" />
+  </wsdl:message>
+  <wsdl:message name="feerefundinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:feerefundinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="feerefundupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:feerefundupdate" />
+  </wsdl:message>
+  <wsdl:message name="feerefundupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:feerefundupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="feerefunddeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:feerefunddelete" />
+  </wsdl:message>
+  <wsdl:message name="feerefunddeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:feerefunddeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="feerefundshowSoapIn">
+    <wsdl:part name="parameters" element="tns:feerefundshow" />
+  </wsdl:message>
+  <wsdl:message name="feerefundshowSoapOut">
+    <wsdl:part name="parameters" element="tns:feerefundshowResponse" />
+  </wsdl:message>
+  <wsdl:portType name="hostelserviceSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hostelroominsert">
+      <wsdl:input message="tns:hostelroominsertSoapIn" />
+      <wsdl:output message="tns:hostelroominsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomupdate">
+      <wsdl:input message="tns:hostelroomupdateSoapIn" />
+      <wsdl:output message="tns:hostelroomupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomdelete">
+      <wsdl:input message="tns:hostelroomdeleteSoapIn" />
+      <wsdl:output message="tns:hostelroomdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomshow">
+      <wsdl:input message="tns:hostelroomshowSoapIn" />
+      <wsdl:output message="tns:hostelroomshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterinsert">
+      <wsdl:input message="tns:studenthostelregisterinsertSoapIn" />
+      <wsdl:output message="tns:studenthostelregisterinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterupdate">
+      <wsdl:input message="tns:studenthostelregisterupdateSoapIn" />
+      <wsdl:output message="tns:studenthostelregisterupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterdelete">
+      <wsdl:input message="tns:studenthostelregisterdeleteSoapIn" />
+      <wsdl:output message="tns:studenthostelregisterdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregistershow">
+      <wsdl:input message="tns:studenthostelregistershowSoapIn" />
+      <wsdl:output message="tns:studenthostelregistershowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="payfeeinsert">
+      <wsdl:input message="tns:payfeeinsertSoapIn" />
+      <wsdl:output message="tns:payfeeinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="payfeeupdate">
+      <wsdl:input message="tns:payfeeupdateSoapIn" />
+      <wsdl:output message="tns:payfeeupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="payfeedelete">
+      <wsdl:input message="tns:payfeedeleteSoapIn" />
+      <wsdl:output message="tns:payfeedeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="payfeeshow">
+      <wsdl:input message="tns:payfeeshowSoapIn" />
+      <wsdl:output message="tns:payfeeshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="feerefundinsert">
+      <wsdl:input message="tns:feerefundinsertSoapIn" />
+      <wsdl:output message="tns:feerefundinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="feerefundupdate">
+      <wsdl:input message="tns:feerefundupdateSoapIn" />
+      <wsdl:output message="tns:feerefundupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="feerefunddelete">
+      <wsdl:input message="tns:feerefunddeleteSoapIn" />
+      <wsdl:output message="tns:feerefunddeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="feerefundshow">
+      <wsdl:input message="tns:feerefundshowSoapIn" />
+      <wsdl:output message="tns:feerefundshowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="hostelserviceSoap" type="tns:hostelserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroominsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroominsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroomupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroomdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroomshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregisterinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregisterupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregisterdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregistershow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregistershow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeeinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeeinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeeupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeeupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeedelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeedelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeeshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeeshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefundinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefundinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefundupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefundupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefunddelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefunddelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefundshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefundshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="hostelserviceSoap12" type="tns:hostelserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroominsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroominsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroomupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroomdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostelroomshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/hostelroomshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregisterinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregisterupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregisterdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregisterdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studenthostelregistershow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studenthostelregistershow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeeinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeeinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeeupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeeupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeedelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeedelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payfeeshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/payfeeshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefundinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefundinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefundupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefundupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefunddelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefunddelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feerefundshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/feerefundshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="hostelservice">
+    <wsdl:port name="hostelserviceSoap" binding="tns:hostelserviceSoap">
+      <soap:address location="http://localhost:6050/school_management/Admin/hostelservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="hostelserviceSoap12" binding="tns:hostelserviceSoap12">
+      <soap12:address location="http://localhost:6050/school_management/Admin/hostelservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

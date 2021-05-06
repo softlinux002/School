@@ -1,0 +1,1644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schoolmgmt.sswtechnology.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schoolmgmt.sswtechnology.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schoolmgmt.sswtechnology.com/">
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="noticeshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="noticeshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noticeshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaintinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="complaint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaintinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentcomplaintinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaintupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="complaint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaintupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentcomplaintupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaintdelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaintdeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentcomplaintdeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="studentcomplaint">
+        <s:complexType />
+      </s:element>
+      <s:element name="studentcomplaintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="studentcomplaintResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="stuevent">
+        <s:complexType />
+      </s:element>
+      <s:element name="stueventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stueventResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiaryinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="des" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiaryinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dailydiaryinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiaryupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="des" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiaryupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dailydiaryupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiarydelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiarydeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dailydiarydeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dailydiaryshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="dailydiaryshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dailydiaryshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leaveinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leaveinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="leaveinsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leaveupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leaveupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="leaveupdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leavedeletedelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leavedeletedeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="leavedeletedeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leaveshow">
+        <s:complexType />
+      </s:element>
+      <s:element name="leaveshowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="leaveshowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapIn">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="updateSoapOut">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="noticeshowSoapIn">
+    <wsdl:part name="parameters" element="tns:noticeshow" />
+  </wsdl:message>
+  <wsdl:message name="noticeshowSoapOut">
+    <wsdl:part name="parameters" element="tns:noticeshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:studentcomplaintinsert" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:studentcomplaintinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:studentcomplaintupdate" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:studentcomplaintupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintdeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:studentcomplaintdelete" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintdeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:studentcomplaintdeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintSoapIn">
+    <wsdl:part name="parameters" element="tns:studentcomplaint" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintSoapOut">
+    <wsdl:part name="parameters" element="tns:studentcomplaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="stueventSoapIn">
+    <wsdl:part name="parameters" element="tns:stuevent" />
+  </wsdl:message>
+  <wsdl:message name="stueventSoapOut">
+    <wsdl:part name="parameters" element="tns:stueventResponse" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:dailydiaryinsert" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:dailydiaryinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:dailydiaryupdate" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:dailydiaryupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="dailydiarydeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:dailydiarydelete" />
+  </wsdl:message>
+  <wsdl:message name="dailydiarydeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:dailydiarydeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryshowSoapIn">
+    <wsdl:part name="parameters" element="tns:dailydiaryshow" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryshowSoapOut">
+    <wsdl:part name="parameters" element="tns:dailydiaryshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="leaveinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:leaveinsert" />
+  </wsdl:message>
+  <wsdl:message name="leaveinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:leaveinsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="leaveupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:leaveupdate" />
+  </wsdl:message>
+  <wsdl:message name="leaveupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:leaveupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="leavedeletedeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:leavedeletedelete" />
+  </wsdl:message>
+  <wsdl:message name="leavedeletedeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:leavedeletedeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="leaveshowSoapIn">
+    <wsdl:part name="parameters" element="tns:leaveshow" />
+  </wsdl:message>
+  <wsdl:message name="leaveshowSoapOut">
+    <wsdl:part name="parameters" element="tns:leaveshowResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetIn">
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="img" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="img" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpGetIn" />
+  <wsdl:message name="showHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="noticeshowHttpGetIn" />
+  <wsdl:message name="noticeshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintinsertHttpGetIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintdeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintdeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintHttpGetIn" />
+  <wsdl:message name="studentcomplaintHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="stueventHttpGetIn" />
+  <wsdl:message name="stueventHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryinsertHttpGetIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="dailydiarydeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="dailydiarydeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryshowHttpGetIn" />
+  <wsdl:message name="dailydiaryshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="leaveinsertHttpGetIn">
+    <wsdl:part name="tid" type="s:string" />
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="reason" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="leaveinsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="leaveupdateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="tid" type="s:string" />
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="reason" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="leaveupdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="leavedeletedeleteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="leavedeletedeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="leaveshowHttpGetIn" />
+  <wsdl:message name="leaveshowHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostIn">
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="img" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+    <wsdl:part name="img" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="showHttpPostIn" />
+  <wsdl:message name="showHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="noticeshowHttpPostIn" />
+  <wsdl:message name="noticeshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintinsertHttpPostIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="roll" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="complaint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintdeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintdeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="studentcomplaintHttpPostIn" />
+  <wsdl:message name="studentcomplaintHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="stueventHttpPostIn" />
+  <wsdl:message name="stueventHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryinsertHttpPostIn">
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="batch" type="s:string" />
+    <wsdl:part name="stream" type="s:string" />
+    <wsdl:part name="clas" type="s:string" />
+    <wsdl:part name="section" type="s:string" />
+    <wsdl:part name="sname" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="des" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="dailydiarydeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="dailydiarydeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="dailydiaryshowHttpPostIn" />
+  <wsdl:message name="dailydiaryshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="leaveinsertHttpPostIn">
+    <wsdl:part name="tid" type="s:string" />
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="reason" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="leaveinsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="leaveupdateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="tid" type="s:string" />
+    <wsdl:part name="tname" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="reason" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="leaveupdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="leavedeletedeleteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="leavedeletedeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="leaveshowHttpPostIn" />
+  <wsdl:message name="leaveshowHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="serviceteacherSoap">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateSoapIn" />
+      <wsdl:output message="tns:updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <wsdl:input message="tns:noticeshowSoapIn" />
+      <wsdl:output message="tns:noticeshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <wsdl:input message="tns:studentcomplaintinsertSoapIn" />
+      <wsdl:output message="tns:studentcomplaintinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <wsdl:input message="tns:studentcomplaintupdateSoapIn" />
+      <wsdl:output message="tns:studentcomplaintupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <wsdl:input message="tns:studentcomplaintdeleteSoapIn" />
+      <wsdl:output message="tns:studentcomplaintdeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <wsdl:input message="tns:studentcomplaintSoapIn" />
+      <wsdl:output message="tns:studentcomplaintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <wsdl:input message="tns:stueventSoapIn" />
+      <wsdl:output message="tns:stueventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <wsdl:input message="tns:dailydiaryinsertSoapIn" />
+      <wsdl:output message="tns:dailydiaryinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <wsdl:input message="tns:dailydiaryupdateSoapIn" />
+      <wsdl:output message="tns:dailydiaryupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <wsdl:input message="tns:dailydiarydeleteSoapIn" />
+      <wsdl:output message="tns:dailydiarydeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <wsdl:input message="tns:dailydiaryshowSoapIn" />
+      <wsdl:output message="tns:dailydiaryshowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <wsdl:input message="tns:leaveinsertSoapIn" />
+      <wsdl:output message="tns:leaveinsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <wsdl:input message="tns:leaveupdateSoapIn" />
+      <wsdl:output message="tns:leaveupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <wsdl:input message="tns:leavedeletedeleteSoapIn" />
+      <wsdl:output message="tns:leavedeletedeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <wsdl:input message="tns:leaveshowSoapIn" />
+      <wsdl:output message="tns:leaveshowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serviceteacherHttpGet">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpGetIn" />
+      <wsdl:output message="tns:insertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpGetIn" />
+      <wsdl:output message="tns:updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpGetIn" />
+      <wsdl:output message="tns:deleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpGetIn" />
+      <wsdl:output message="tns:showHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <wsdl:input message="tns:noticeshowHttpGetIn" />
+      <wsdl:output message="tns:noticeshowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <wsdl:input message="tns:studentcomplaintinsertHttpGetIn" />
+      <wsdl:output message="tns:studentcomplaintinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <wsdl:input message="tns:studentcomplaintupdateHttpGetIn" />
+      <wsdl:output message="tns:studentcomplaintupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <wsdl:input message="tns:studentcomplaintdeleteHttpGetIn" />
+      <wsdl:output message="tns:studentcomplaintdeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <wsdl:input message="tns:studentcomplaintHttpGetIn" />
+      <wsdl:output message="tns:studentcomplaintHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <wsdl:input message="tns:stueventHttpGetIn" />
+      <wsdl:output message="tns:stueventHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <wsdl:input message="tns:dailydiaryinsertHttpGetIn" />
+      <wsdl:output message="tns:dailydiaryinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <wsdl:input message="tns:dailydiaryupdateHttpGetIn" />
+      <wsdl:output message="tns:dailydiaryupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <wsdl:input message="tns:dailydiarydeleteHttpGetIn" />
+      <wsdl:output message="tns:dailydiarydeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <wsdl:input message="tns:dailydiaryshowHttpGetIn" />
+      <wsdl:output message="tns:dailydiaryshowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <wsdl:input message="tns:leaveinsertHttpGetIn" />
+      <wsdl:output message="tns:leaveinsertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <wsdl:input message="tns:leaveupdateHttpGetIn" />
+      <wsdl:output message="tns:leaveupdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <wsdl:input message="tns:leavedeletedeleteHttpGetIn" />
+      <wsdl:output message="tns:leavedeletedeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <wsdl:input message="tns:leaveshowHttpGetIn" />
+      <wsdl:output message="tns:leaveshowHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serviceteacherHttpPost">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertHttpPostIn" />
+      <wsdl:output message="tns:insertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:updateHttpPostIn" />
+      <wsdl:output message="tns:updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteHttpPostIn" />
+      <wsdl:output message="tns:deleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showHttpPostIn" />
+      <wsdl:output message="tns:showHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <wsdl:input message="tns:noticeshowHttpPostIn" />
+      <wsdl:output message="tns:noticeshowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <wsdl:input message="tns:studentcomplaintinsertHttpPostIn" />
+      <wsdl:output message="tns:studentcomplaintinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <wsdl:input message="tns:studentcomplaintupdateHttpPostIn" />
+      <wsdl:output message="tns:studentcomplaintupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <wsdl:input message="tns:studentcomplaintdeleteHttpPostIn" />
+      <wsdl:output message="tns:studentcomplaintdeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <wsdl:input message="tns:studentcomplaintHttpPostIn" />
+      <wsdl:output message="tns:studentcomplaintHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <wsdl:input message="tns:stueventHttpPostIn" />
+      <wsdl:output message="tns:stueventHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <wsdl:input message="tns:dailydiaryinsertHttpPostIn" />
+      <wsdl:output message="tns:dailydiaryinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <wsdl:input message="tns:dailydiaryupdateHttpPostIn" />
+      <wsdl:output message="tns:dailydiaryupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <wsdl:input message="tns:dailydiarydeleteHttpPostIn" />
+      <wsdl:output message="tns:dailydiarydeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <wsdl:input message="tns:dailydiaryshowHttpPostIn" />
+      <wsdl:output message="tns:dailydiaryshowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <wsdl:input message="tns:leaveinsertHttpPostIn" />
+      <wsdl:output message="tns:leaveinsertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <wsdl:input message="tns:leaveupdateHttpPostIn" />
+      <wsdl:output message="tns:leaveupdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <wsdl:input message="tns:leavedeletedeleteHttpPostIn" />
+      <wsdl:output message="tns:leavedeletedeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <wsdl:input message="tns:leaveshowHttpPostIn" />
+      <wsdl:output message="tns:leaveshowHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviceteacherSoap" type="tns:serviceteacherSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/noticeshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaintinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaintupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaintdelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/stuevent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiaryinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiaryupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiarydelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiaryshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/leaveinsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/leaveupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/leavedeletedelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <soap:operation soapAction="http://schoolmgmt.sswtechnology.com/leaveshow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceteacherSoap12" type="tns:serviceteacherSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/noticeshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaintinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaintupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaintdelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/studentcomplaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/stuevent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiaryinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiaryupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiarydelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/dailydiaryshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/leaveinsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/leaveupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/leavedeletedelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <soap12:operation soapAction="http://schoolmgmt.sswtechnology.com/leaveshow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceteacherHttpGet" type="tns:serviceteacherHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <http:operation location="/noticeshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <http:operation location="/studentcomplaintinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <http:operation location="/studentcomplaintupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <http:operation location="/studentcomplaintdelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <http:operation location="/studentcomplaint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <http:operation location="/stuevent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <http:operation location="/dailydiaryinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <http:operation location="/dailydiaryupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <http:operation location="/dailydiarydelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <http:operation location="/dailydiaryshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <http:operation location="/leaveinsert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <http:operation location="/leaveupdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <http:operation location="/leavedeletedelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <http:operation location="/leaveshow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceteacherHttpPost" type="tns:serviceteacherHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="insert">
+      <http:operation location="/insert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <http:operation location="/update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <http:operation location="/delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <http:operation location="/show" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="noticeshow">
+      <http:operation location="/noticeshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintinsert">
+      <http:operation location="/studentcomplaintinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintupdate">
+      <http:operation location="/studentcomplaintupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaintdelete">
+      <http:operation location="/studentcomplaintdelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentcomplaint">
+      <http:operation location="/studentcomplaint" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stuevent">
+      <http:operation location="/stuevent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryinsert">
+      <http:operation location="/dailydiaryinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryupdate">
+      <http:operation location="/dailydiaryupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiarydelete">
+      <http:operation location="/dailydiarydelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailydiaryshow">
+      <http:operation location="/dailydiaryshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveinsert">
+      <http:operation location="/leaveinsert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveupdate">
+      <http:operation location="/leaveupdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leavedeletedelete">
+      <http:operation location="/leavedeletedelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveshow">
+      <http:operation location="/leaveshow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="serviceteacher">
+    <wsdl:port name="serviceteacherSoap" binding="tns:serviceteacherSoap">
+      <soap:address location="http://localhost:6050/school_management/Teacher/serviceteacher.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceteacherSoap12" binding="tns:serviceteacherSoap12">
+      <soap12:address location="http://localhost:6050/school_management/Teacher/serviceteacher.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceteacherHttpGet" binding="tns:serviceteacherHttpGet">
+      <http:address location="http://localhost:6050/school_management/Teacher/serviceteacher.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceteacherHttpPost" binding="tns:serviceteacherHttpPost">
+      <http:address location="http://localhost:6050/school_management/Teacher/serviceteacher.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
